@@ -60,7 +60,7 @@
                             <td></td>
                             <td>{{index+1}}</td>
                             <td>{{ item.reminder_date }}</td>
-                            <td>{{ new Date(item.reminder_time) | moment("h:mm A") }}</td>
+                            <td>{{ item.reminder_time }}</td>
                             <td>{{ item.phone }}</td>
                             <td>{{ item.appointment_date }}</td>
                             <td>{{ item.appointment_time }}</td>
@@ -156,7 +156,7 @@ export default {
         deleteRecord(id) {
                 this.loading = true 
                 this.errors = [];
-                Nova.request().post("/nova-vendor/reminder/delete",{id:id})
+                Nova.request().post("/nova-vendor/dashboard/delete",{id:id})
                 .then(response => {
                      this.data = response.data.data
                     setTimeout(() => { this.loading = false }, 200)
