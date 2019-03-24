@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc33001505ddb14edb38224597b7a3cf",
+    "content-hash": "dba681edd87a2cef346aed839e0b9225",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -62,6 +62,74 @@
                 "time"
             ],
             "time": "2019-02-11T02:08:31+00:00"
+        },
+        {
+            "name": "digi/dashboard",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Dashboard",
+                "reference": "475b4dff8ea05a5bda274cc0edc784a191a58c7d",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Digi\\Dashboard\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Digi\\Dashboard\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
+        },
+        {
+            "name": "digi/setting",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Setting",
+                "reference": "d4efb9925d7a7160ff836ea3b813fce87565f9ee",
+                "shasum": null
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Digi\\Setting\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Digi\\Setting\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ]
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -903,7 +971,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "6b34fd3882e3cff2dc99d288393e92025bc93094",
+                "reference": "3f3e9f1b67293b957f5c96da00a8da56f7e263ff",
                 "shasum": null
             },
             "require": {
@@ -1454,6 +1522,66 @@
             ],
             "description": "PHP Client for using Nexmo's API.",
             "time": "2019-03-15T11:47:11+00:00"
+        },
+        {
+            "name": "nexmo/laravel",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nexmo/nexmo-laravel.git",
+                "reference": "98cdca5d89f537d27e96a3e6c4d5b22299523b56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nexmo/nexmo-laravel/zipball/98cdca5d89f537d27e96a3e6c4d5b22299523b56",
+                "reference": "98cdca5d89f537d27e96a3e6c4d5b22299523b56",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.2",
+                "nexmo/client": "^1.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^5.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nexmo\\Laravel\\NexmoServiceProvider"
+                    ],
+                    "aliases": {
+                        "Nexmo": "Nexmo\\Laravel\\Facade\\Nexmo"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nexmo\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Lytle",
+                    "email": "tim@nexmo.com",
+                    "homepage": "http://twitter.com/tjlytle",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Michael Heap",
+                    "email": "michael.heap@nexmo.com",
+                    "homepage": "http://twitter.com/mheap",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel Package for Nexmo's PHP Client",
+            "time": "2018-03-19T10:28:52+00:00"
         },
         {
             "name": "nikic/php-parser",
