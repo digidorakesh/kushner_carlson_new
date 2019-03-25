@@ -5588,7 +5588,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.loading = true;
             this.errors = [];
-            Nova.request().post("/nova-vendor/reminder/delete", { id: id }).then(function (response) {
+            Nova.request().post("/nova-vendor/dashboard/delete", { id: id }).then(function (response) {
                 _this3.data = response.data.data;
                 setTimeout(function () {
                     _this3.loading = false;
@@ -5731,16 +5731,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(item.reminder_date))]),
                       _vm._v(" "),
-                      _c("td", [
-                        _vm._v(
-                          _vm._s(
-                            _vm._f("moment")(
-                              new Date(item.reminder_time),
-                              "h:mm A"
-                            )
-                          )
-                        )
-                      ]),
+                      _c("td", [_vm._v(_vm._s(item.reminder_time))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(item.phone))]),
                       _vm._v(" "),
@@ -6239,7 +6230,7 @@ var social_profile = {
             } else {
                 redirect = '/dashboard';
             }
-            alert(redirect);
+            // alert(redirect)
             Nova.request().post("/nova-vendor/dashboard", { data: this.data }).then(function (response) {
                 _this3.data = response.data.data;
                 setTimeout(function () {
