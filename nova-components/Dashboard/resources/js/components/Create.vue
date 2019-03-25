@@ -202,7 +202,7 @@ export default {
                 }else{
                      redirect = '/dashboard';
                 }
-                alert(redirect)
+               // alert(redirect)
                 Nova.request().post("/nova-vendor/dashboard",{data:this.data})
                 .then(response => {
                      this.data = response.data.data
