@@ -49180,8 +49180,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! /var/www/kushner_carlson/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /var/www/kushner_carlson/resources/sass/app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! E:\xampp\htdocs\kushner_carlson_new\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\xampp\htdocs\kushner_carlson_new\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> e9ba08938d7eed20451f9683878ca2f0b3957dd2
 
 
 /***/ })

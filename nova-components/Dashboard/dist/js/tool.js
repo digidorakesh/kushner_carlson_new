@@ -5528,6 +5528,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -5725,7 +5735,69 @@ var render = function() {
                 [
                   _vm._l(_vm.data, function(item, index) {
                     return _c("tr", [
-                      _c("td"),
+                      _c("td", { staticClass: "w-16" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "flex items-center",
+                            attrs: {
+                              "data-testid": "users-items-0-checkbox",
+                              dusk: "1-checkbox"
+                            }
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "checkbox select-none rounded",
+                                attrs: { tabindex: "0", role: "checkbox" }
+                              },
+                              [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.check,
+                                      expression: "check"
+                                    }
+                                  ],
+                                  attrs: { type: "checkbox", value: "item.id" },
+                                  domProps: {
+                                    checked: Array.isArray(_vm.check)
+                                      ? _vm._i(_vm.check, "item.id") > -1
+                                      : _vm.check
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      var $$a = _vm.check,
+                                        $$el = $event.target,
+                                        $$c = $$el.checked ? true : false
+                                      if (Array.isArray($$a)) {
+                                        var $$v = "item.id",
+                                          $$i = _vm._i($$a, $$v)
+                                        if ($$el.checked) {
+                                          $$i < 0 &&
+                                            (_vm.check = $$a.concat([$$v]))
+                                        } else {
+                                          $$i > -1 &&
+                                            (_vm.check = $$a
+                                              .slice(0, $$i)
+                                              .concat($$a.slice($$i + 1)))
+                                        }
+                                      } else {
+                                        _vm.check = $$c
+                                      }
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "check" })
+                              ]
+                            )
+                          ]
+                        )
+                      ]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(index + 1))]),
                       _vm._v(" "),
