@@ -53,10 +53,13 @@ class Reminder extends Resource
             Date::make('Reminder Date')->hideWhenCreating()->hideWhenUpdating(),
             TimeField::make('Reminder Time')->withTwelveHourTime()
                 ->hideWhenCreating()->hideWhenUpdating(),
-            PhoneNumber::make('Phone Number','phone')->hideFromIndex()
-            ->format('(###)-###-####'),
+            PhoneNumber::make('Phone Number','phone')->hideFromIndex()->disableValidation()
+            //->format('(###)-###-####')
+            ->countries(['US','IN']),
             PhoneNumber::make('Phone','phone')->hideWhenCreating()->hideWhenUpdating()
-            ->format('(###)-###-####'),
+			->disableValidation()
+            //->format('(###)-###-####')
+            ->countries(['US','IN']),
             Date::make('Appointment Date')
                 ->sortable(),
             TimeField::make('Appointment Time')->withTwelveHourTime()
