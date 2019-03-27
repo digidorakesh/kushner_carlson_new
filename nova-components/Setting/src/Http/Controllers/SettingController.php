@@ -81,6 +81,7 @@ class SettingController extends Controller
             'data.app.before_hours.integer'=>'Please enter only integer number',
             'data.app.before_hours.min'=>'Please enter only integer number',
             );
+            
             $request->validate([
                 'data.app.sms_messgae' => 'required',
                 'data.app.before_hours' => 'required|integer|min:0',

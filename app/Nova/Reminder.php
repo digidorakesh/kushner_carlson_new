@@ -57,9 +57,9 @@ class Reminder extends Resource
             ->format('(###)-###-####'),
             PhoneNumber::make('Phone','phone')->hideWhenCreating()->hideWhenUpdating()
             ->format('(###)-###-####'),
-            Date::make('Appointment Date')
+            Date::make('Date of Appointment','appointment_date')
                 ->sortable(),
-            TimeField::make('Appointment Time')->withTwelveHourTime()
+            TimeField::make('Time of Appointment','appointment_time')->withTwelveHourTime()
                 ->sortable(),
         ];
     }
