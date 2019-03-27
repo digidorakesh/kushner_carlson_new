@@ -49,14 +49,17 @@ class Reminder extends Model
         self::saving(function($model){
         	// echo '<pre>';
         	// print_r($model->appointment_date);
-        	 		$ap_date = $model->appointment_date;
+        	 		$ap_date = ($model->appointment_date->format('Y-m-d'));
                     $ap_time = $model->appointment_time;
+                    $ap_date = $ap_date.' '.$ap_time;
  					$setting = Setting::where(['key'=> 'before_hours'])->select(['value'])->get();
                     $before_hours = isset($setting[0]->value)?$setting[0]->value:24;
                     $ap_date = new \Carbon\Carbon($ap_date);
-                    $reminder_date = $ap_date->addHours($before_hours);
+                   // $reminder_date = $ap_date->subHours($before_hours);
+                    $reminder_date = $ap_date->subHours($before_hours)->Format('Y-m-d');
+                    $reminder_time = $ap_date->subHours($before_hours)->Format('H:i:s');
                     $model->reminder_date = $reminder_date;
-                    $reminder_time = $ap_time;
+                    //$reminder_time = $ap_time;
                     $model->reminder_time = $reminder_time;
                     
         });
