@@ -113,7 +113,7 @@ class Reminder extends Resource
 
     // }
 
-    public static function label() {
-    return 'Your own label';
-}
+//     public static function label() {
+//     return 'Your own label';
+// }
 }
