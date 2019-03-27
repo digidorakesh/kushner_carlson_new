@@ -36,6 +36,8 @@ class Reminder extends Resource
         'phone','reminder_date','appointment_date'
     ];
 
+    public static $advancedPagination = true;
+
      public static $displayInNavigation = false;
     /**
      * Get the fields displayed by the resource.
@@ -48,11 +50,13 @@ class Reminder extends Resource
 
         return [
             ID::make()->sortable(),
-            PhoneNumber::make('Phone')
-            ->format('(###)-###-####'),
             Date::make('Reminder Date')->hideWhenCreating()->hideWhenUpdating(),
             TimeField::make('Reminder Time')->withTwelveHourTime()
                 ->hideWhenCreating()->hideWhenUpdating(),
+            PhoneNumber::make('Phone Number','phone')->hideFromIndex()
+            ->format('(###)-###-####'),
+            PhoneNumber::make('Phone','phone')->hideWhenCreating()->hideWhenUpdating()
+            ->format('(###)-###-####'),
             Date::make('Appointment Date')
                 ->sortable(),
             TimeField::make('Appointment Time')->withTwelveHourTime()
@@ -103,4 +107,13 @@ class Reminder extends Resource
     {
         return [];
     }
+
+    // public static function uriKey(){
+
+
+    // }
+
+    public static function label() {
+    return 'Your own label';
+}
 }

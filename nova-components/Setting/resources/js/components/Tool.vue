@@ -5,7 +5,7 @@
         </div>
 
         <div>
-        <heading class="mb-6">Setting Tool</heading>
+        <heading class="mb-6">Settings</heading>
         <tabs>
             <tab name="Application Site">
                 <div class="card">
@@ -13,11 +13,11 @@
                         <div>
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 px-8 py-6">
-                                    <label class="inline-block text-80 h-9 pt-2">Site Name</label>
+                                    <label class="inline-block text-80 h-9 pt-2">SMS Message</label>
                                     <p class="text-sm leading-normal text-80 italic"></p>
                                 </div>
                                 <div class="w-3/4 px-8 py-6">
-                                    <textarea v-model="app.sms_messgae" name="sms_messgae" placeholder="SMS Message" class="w-full form-control form-input form-input-bordered" cols="4" rows="10"></textarea>
+                                    <textarea v-model="app.sms_messgae" name="sms_messgae" placeholder="SMS Message" class="w-full form-control form-input form-input-bordered" cols="4" rows="10" style="height: 105px;"></textarea>
                                     <div v-if="errors['data.app.sms_messgae']" :class="['help-text error-text mt-2 text-danger']">
                                         @{{ errors['data.app.sms_messgae'][0] }}
                                     </div> 
@@ -41,7 +41,7 @@
                            
                             <div class="flex border-b border-40">
                                 <div class="w-1/4 px-8 py-6">
-                                    <label class="inline-block text-80 h-9 pt-2" for="Version">Send Hours Before Appointment</label>
+                                    <label class="inline-block text-80 h-9 pt-2" for="Version">Send (Hours Before Appointment)</label>
                                     <p class="text-sm leading-normal text-80 italic"></p>
                                 </div>
                                 <div class="w-1/4 px-8 py-6">
@@ -55,7 +55,7 @@
                         </div>
                         <div class="bg-30 flex px-8 py-4">
                             <button type="submit" class="ml-auto btn btn-default btn-primary mr-3">
-                                Save Setting
+                                Save Settings
                             </button>
                         </div>
                     </form>

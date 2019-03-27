@@ -81,7 +81,7 @@ class SettingController extends Controller
             );
             $request->validate([
                 'data.app.sms_messgae' => 'required',
-                'data.app.before_hours' => 'required',
+                'data.app.before_hours' => 'required|integer|min:0',
             ],$messsages);
 
                 // if($validator->fails()){
