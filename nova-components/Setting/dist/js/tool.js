@@ -60,78 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(1);
-module.exports = __webpack_require__(5);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Nova.booting(function (Vue, router, store) {
-    router.addRoutes([{
-        name: 'setting',
-        path: '/setting',
-        component: __webpack_require__(2)
-    }]);
-});
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(3)
-/* script */
-var __vue_script__ = __webpack_require__(12)
-/* template */
-var __vue_template__ = __webpack_require__(4)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/Tool.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-68ff5483", Component.options)
-  } else {
-    hotAPI.reload("data-v-68ff5483", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -240,324 +173,15 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "relative" }, [
-    _vm.loading
-      ? _c(
-          "div",
-          {
-            staticClass:
-              "rounded-lg flex items-center justify-center absolute pin z-50 bg-40 -m-4"
-          },
-          [_c("loader", { staticClass: "text-60" })],
-          1
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _c(
-      "div",
-      [
-        _c("heading", { staticClass: "mb-6" }, [_vm._v("Setting Tool")]),
-        _vm._v(" "),
-        _c(
-          "tabs",
-          [
-            _c("tab", { attrs: { name: "Application Site" } }, [
-              _c("div", { staticClass: "card" }, [
-                _c(
-                  "form",
-                  {
-                    on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                        return _vm.updateSetting($event)
-                      }
-                    }
-                  },
-                  [
-                    _c("div", [
-                      _c("div", { staticClass: "flex border-b border-40" }, [
-                        _c("div", { staticClass: "w-1/4 px-8 py-6" }, [
-                          _c(
-                            "label",
-                            { staticClass: "inline-block text-80 h-9 pt-2" },
-                            [_vm._v("Site Name")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", {
-                            staticClass: "text-sm leading-normal text-80 italic"
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "w-3/4 px-8 py-6" }, [
-                          _c("textarea", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.app.sms_messgae,
-                                expression: "app.sms_messgae"
-                              }
-                            ],
-                            staticClass:
-                              "w-full form-control form-input form-input-bordered",
-                            attrs: {
-                              name: "sms_messgae",
-                              placeholder: "SMS Message",
-                              cols: "4",
-                              rows: "10"
-                            },
-                            domProps: { value: _vm.app.sms_messgae },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.app,
-                                  "sms_messgae",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm.errors["data.app.sms_messgae"]
-                            ? _c(
-                                "div",
-                                {
-                                  class: [
-                                    "help-text error-text mt-2 text-danger"
-                                  ]
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                    @" +
-                                      _vm._s(
-                                        _vm.errors["data.app.sms_messgae"][0]
-                                      ) +
-                                      "\n                                "
-                                  )
-                                ]
-                              )
-                            : _vm._e()
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "flex border-b border-40" }, [
-                        _c("div", { staticClass: "w-1/4 px-8 py-6" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "inline-block text-80 h-9 pt-2",
-                              attrs: { for: "Version" }
-                            },
-                            [_vm._v("Send Hours Before Appointment")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", {
-                            staticClass: "text-sm leading-normal text-80 italic"
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "w-1/4 px-8 py-6" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.app.before_hours,
-                                expression: "app.before_hours"
-                              }
-                            ],
-                            staticClass:
-                              "w-full form-control form-input form-input-bordered",
-                            attrs: {
-                              placeholder: "Send Hours Before Appointment",
-                              type: "number"
-                            },
-                            domProps: { value: _vm.app.before_hours },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.app,
-                                  "before_hours",
-                                  $event.target.value
-                                )
-                              }
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm.errors["data.app.before_hours"]
-                            ? _c(
-                                "div",
-                                {
-                                  class: [
-                                    "help-text error-text mt-2 text-danger"
-                                  ]
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                    @" +
-                                      _vm._s(
-                                        _vm.errors["data.app.before_hours"][0]
-                                      ) +
-                                      "\n                                "
-                                  )
-                                ]
-                              )
-                            : _vm._e()
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "bg-30 flex px-8 py-4" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "ml-auto btn btn-default btn-primary mr-3",
-                          attrs: { type: "submit" }
-                        },
-                        [
-                          _vm._v(
-                            "\n                            Save Setting\n                        "
-                          )
-                        ]
-                      )
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ],
-          1
-        )
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-68ff5483", module.exports)
-  }
-}
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 6 */,
-/* 7 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(19)
+var __vue_template__ = __webpack_require__(14)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -596,15 +220,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 11 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(20)
+var __vue_script__ = __webpack_require__(15)
 /* template */
-var __vue_template__ = __webpack_require__(21)
+var __vue_template__ = __webpack_require__(16)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -643,14 +267,81 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 12 */
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(4);
+module.exports = __webpack_require__(22);
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Nova.booting(function (Vue, router, store) {
+    router.addRoutes([{
+        name: 'setting',
+        path: '/setting',
+        component: __webpack_require__(5)
+    }]);
+});
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(6)
+/* template */
+var __vue_template__ = __webpack_require__(21)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Tool.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-68ff5483", Component.options)
+  } else {
+    hotAPI.reload("data-v-68ff5483", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_Toggle__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_Toggle__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__partials_Toggle___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__partials_Toggle__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__partials_Text__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__partials_Text__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__partials_Text___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__partials_Text__);
 //
 //
@@ -875,19 +566,19 @@ var social_profile = {
 });
 
 /***/ }),
-/* 13 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(14)
+  __webpack_require__(8)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(18)
+var __vue_script__ = __webpack_require__(13)
 /* template */
-var __vue_template__ = __webpack_require__(22)
+var __vue_template__ = __webpack_require__(17)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -926,17 +617,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 14 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(15);
+var content = __webpack_require__(9);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(16)("15d1babd", content, false, {});
+var update = __webpack_require__(11)("15d1babd", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -952,10 +643,10 @@ if(false) {
 }
 
 /***/ }),
-/* 15 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(7)(false);
+exports = module.exports = __webpack_require__(10)(false);
 // imports
 
 
@@ -966,7 +657,89 @@ exports.push([module.i, "\n.toggle[data-v-1a6abd16] {\r\n    display: -webkit-bo
 
 
 /***/ }),
-/* 16 */
+/* 10 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -985,7 +758,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(17)
+var listToStyles = __webpack_require__(12)
 
 /*
 type StyleObject = {
@@ -1194,7 +967,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 17 */
+/* 12 */
 /***/ (function(module, exports) {
 
 /**
@@ -1227,14 +1000,14 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 18 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Label__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Label__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Label___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Label__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Info__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Info__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Info___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Info__);
 //
 //
@@ -1283,7 +1056,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 19 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1313,7 +1086,7 @@ if (false) {
 }
 
 /***/ }),
-/* 20 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1335,7 +1108,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 21 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1373,7 +1146,7 @@ if (false) {
 }
 
 /***/ }),
-/* 22 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1421,15 +1194,15 @@ if (false) {
 }
 
 /***/ }),
-/* 23 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(24)
+var __vue_script__ = __webpack_require__(19)
 /* template */
-var __vue_template__ = __webpack_require__(25)
+var __vue_template__ = __webpack_require__(20)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1468,14 +1241,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 24 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Label__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Label__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Label___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Label__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Info__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Info__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Info___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Info__);
 //
 //
@@ -1525,7 +1298,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 25 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1574,6 +1347,231 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-70cff4ef", module.exports)
   }
 }
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "relative" }, [
+    _vm.loading
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "rounded-lg flex items-center justify-center absolute pin z-50 bg-40 -m-4"
+          },
+          [_c("loader", { staticClass: "text-60" })],
+          1
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _c("heading", { staticClass: "mb-6" }, [_vm._v("Settings")]),
+        _vm._v(" "),
+        _c(
+          "tabs",
+          [
+            _c("tab", { attrs: { name: "Application Site" } }, [
+              _c("div", { staticClass: "card" }, [
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.updateSetting($event)
+                      }
+                    }
+                  },
+                  [
+                    _c("div", [
+                      _c("div", { staticClass: "flex border-b border-40" }, [
+                        _c("div", { staticClass: "w-1/4 px-8 py-6" }, [
+                          _c(
+                            "label",
+                            { staticClass: "inline-block text-80 h-9 pt-2" },
+                            [_vm._v("SMS Message")]
+                          ),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass: "text-sm leading-normal text-80 italic"
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "w-3/4 px-8 py-6" }, [
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.app.sms_messgae,
+                                expression: "app.sms_messgae"
+                              }
+                            ],
+                            staticClass:
+                              "w-full form-control form-input form-input-bordered",
+                            staticStyle: { height: "105px" },
+                            attrs: {
+                              name: "sms_messgae",
+                              placeholder: "SMS Message",
+                              cols: "4",
+                              rows: "10"
+                            },
+                            domProps: { value: _vm.app.sms_messgae },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.app,
+                                  "sms_messgae",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _vm.errors["data.app.sms_messgae"]
+                            ? _c(
+                                "div",
+                                {
+                                  class: [
+                                    "help-text error-text mt-2 text-danger"
+                                  ]
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    @" +
+                                      _vm._s(
+                                        _vm.errors["data.app.sms_messgae"][0]
+                                      ) +
+                                      "\n                                "
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "flex border-b border-40" }, [
+                        _c("div", { staticClass: "w-1/4 px-8 py-6" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "inline-block text-80 h-9 pt-2",
+                              attrs: { for: "Version" }
+                            },
+                            [_vm._v("Send (Hours Before Appointment)")]
+                          ),
+                          _vm._v(" "),
+                          _c("p", {
+                            staticClass: "text-sm leading-normal text-80 italic"
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "w-1/4 px-8 py-6" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.app.before_hours,
+                                expression: "app.before_hours"
+                              }
+                            ],
+                            staticClass:
+                              "w-full form-control form-input form-input-bordered",
+                            attrs: {
+                              placeholder: "Send Hours Before Appointment",
+                              type: "number"
+                            },
+                            domProps: { value: _vm.app.before_hours },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.app,
+                                  "before_hours",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _vm.errors["data.app.before_hours"]
+                            ? _c(
+                                "div",
+                                {
+                                  class: [
+                                    "help-text error-text mt-2 text-danger"
+                                  ]
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    @" +
+                                      _vm._s(
+                                        _vm.errors["data.app.before_hours"][0]
+                                      ) +
+                                      "\n                                "
+                                  )
+                                ]
+                              )
+                            : _vm._e()
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "bg-30 flex px-8 py-4" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "ml-auto btn btn-default btn-primary mr-3",
+                          attrs: { type: "submit" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Save Settings\n                        "
+                          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-68ff5483", module.exports)
+  }
+}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

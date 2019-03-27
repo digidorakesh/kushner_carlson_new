@@ -66,7 +66,7 @@ class LoginController extends Controller
      */
     public function redirectPath()
     {
-        return Nova::path();
+        return Nova::path().'/resources/reminders';
     }
 
     /**

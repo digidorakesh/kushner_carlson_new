@@ -29,6 +29,6 @@
 		s7,3.141,7,7S30.859,34,27,34z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
 </svg>
     <span class="sidebar-label">
-        Setting
+        Settings
     </span>
 </router-link>

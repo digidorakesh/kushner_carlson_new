@@ -78,10 +78,12 @@ class SettingController extends Controller
             $messsages = array(
             'data.app.sms_message.required'=>'You cant leave Name field empty',
             'data.app.before_hours.required'=>'You cant leave this field empty',
+            'data.app.before_hours.integer'=>'Please enter only integer number',
+            'data.app.before_hours.min'=>'Please enter only integer number',
             );
             $request->validate([
                 'data.app.sms_messgae' => 'required',
-                'data.app.before_hours' => 'required',
+                'data.app.before_hours' => 'required|integer|min:0',
             ],$messsages);
 
                 // if($validator->fails()){
