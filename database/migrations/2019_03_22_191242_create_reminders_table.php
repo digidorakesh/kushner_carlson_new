@@ -19,7 +19,8 @@ class CreateRemindersTable extends Migration
             $table->time('reminder_time')->nullable();
             $table->string('phone')->nullable();
             $table->date('appointment_date')->nullable();
-            $table->time('appointment_time')->nFullable();
+            $table->time('appointment_time')->nullable();
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }
