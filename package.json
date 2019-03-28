@@ -13,7 +13,9 @@
         "build-dashboard-view": "cd nova-components/views/dashboard && npm run dev",
         "build-dashboard-view-prod": "cd nova-components/views/dashboard && npm run prod",
         "build-dashboard": "cd nova-components/Dashboard && npm run dev",
-        "build-dashboard-prod": "cd nova-components/Dashboard && npm run prod"
+        "build-dashboard-prod": "cd nova-components/Dashboard && npm run prod",
+        "build-time-field": "cd nova-components/TimeField && npm run dev",
+        "build-time-field-prod": "cd nova-components/TimeField && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.18",

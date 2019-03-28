@@ -17,7 +17,9 @@
         "laravel/framework": "5.7.*",
         "laravel/nova": "*",
         "laravel/tinker": "^1.0",
-        "nexmo/laravel": "^1.1"
+        "nexmo/laravel": "^1.1",
+        "acme/time-field": "*",
+        "digi/time-field": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -77,6 +79,14 @@
         {
             "type": "path",
             "url": "./nova-components/Dashboard"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/TimeField"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/TimeField"
         }
     ]
 }

@@ -1000,11 +1000,17 @@ export default {
          */
         resourceCountLabel() {
             let label = this.resources.length > 1 ? this.__('resources') : this.__('resource')
+            //let label = this.resources.name;
 
             return (
                 this.resources.length &&
-                `${this.resources.length}/${this.allMatchingResourceCount} ${label}`
+                `${this.resources.length}/${this.allMatchingResourceCount}`
             )
+            // return (
+            //     this.resources.length &&
+            //     `${this.resources.length}/${this.allMatchingResourceCount} ${label}`
+            // )
+
         },
 
         /**

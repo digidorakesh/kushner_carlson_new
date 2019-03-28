@@ -38,7 +38,7 @@
                 },
             }"
         >
-            {{ __('Create') }} {{ singularName }}
+            {{ __('Add') }} {{ singularName }}
         </router-link>
     </div>
 </template>

@@ -10,7 +10,7 @@ use Michielfb\Time;
 use Dniccum\PhoneNumber\PhoneNumber;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
-
+//use Digi\TimeField\TimeField;
 class Reminder extends Resource
 {
     /**
@@ -37,7 +37,7 @@ class Reminder extends Resource
     ];
 
     public static $advancedPagination = true;
-
+public static $authorizedToView = false;
      public static $displayInNavigation = false;
     /**
      * Get the fields displayed by the resource.
@@ -52,18 +52,27 @@ class Reminder extends Resource
             ID::make()->sortable(),
             Date::make('Reminder Date')->hideWhenCreating()->hideWhenUpdating(),
             TimeField::make('Reminder Time')->withTwelveHourTime()
-                ->hideWhenCreating()->hideWhenUpdating(),
+                ->hideWhenCreating()->hideWhenUpdating()->resolveUsing(function ($value) {
+                    $ap_date = new \Carbon\Carbon($value);
+                    $value = $ap_date->subHours(0)->Format('H:i A');
+                    return $value;
+                }),
             PhoneNumber::make('Phone Number','phone')->hideFromIndex()->disableValidation()
             //->format('(###)-###-####')
             ->countries(['US','IN']),
             PhoneNumber::make('Phone','phone')->hideWhenCreating()->hideWhenUpdating()->hideFromDetail()
-            ->format('(###)-###-####'),
+            ->format('(###)-###-####')
 			->disableValidation()
             //->format('(###)-###-####')
             ->countries(['US','IN']),
             Date::make('Date of Appointment','appointment_date')
                 ->sortable(),
             TimeField::make('Time of Appointment','appointment_time')->withTwelveHourTime()
+            ->resolveUsing(function ($value) {
+                    $re_date = new \Carbon\Carbon($value);
+                    $value = $re_date->subHours(0)->Format('H:i A');
+                    return $value;
+                })
                 ->sortable(),
         ];
     }
@@ -112,6 +121,9 @@ class Reminder extends Resource
         return [];
     }
 
+
+
+
     // public static function uriKey(){
 
 
@@ -120,4 +132,20 @@ class Reminder extends Resource
 //     public static function label() {
 //     return 'Your own label';
 // }
+
+/**
+ * Determine if the current user can delete the given resource.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @return bool
+ */
+public function authorizedToView(Request $request)
+{
+    
+        return false; // or do custom checks.. also maybe check that the route matches nova-api/orders/action
+    
+
+  //  return parent::authorizedTo($request, 'view');
+}
+ 
 }

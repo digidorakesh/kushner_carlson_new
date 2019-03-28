@@ -5421,8 +5421,8 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Checkbox__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Checkbox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Checkbox__);
 //
 //
 //
@@ -5539,7 +5539,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['updateSelectionStatus'],
     data: function data() {
         return {
             loading: true,
@@ -5561,6 +5563,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     methods: {
+        toggleSelection: function toggleSelection() {
+            //this.updateSelectionStatus(this.resource)
+        },
         loadAllData: function loadAllData(pageNum) {
             var _this = this;
 
@@ -5735,69 +5740,22 @@ var render = function() {
                 [
                   _vm._l(_vm.data, function(item, index) {
                     return _c("tr", [
-                      _c("td", { staticClass: "w-16" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "flex items-center",
+                      _c(
+                        "td",
+                        { staticClass: "w-16" },
+                        [
+                          _c("checkbox", {
                             attrs: {
-                              "data-testid": "users-items-0-checkbox",
-                              dusk: "1-checkbox"
-                            }
-                          },
-                          [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "checkbox select-none rounded",
-                                attrs: { tabindex: "0", role: "checkbox" }
-                              },
-                              [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.check,
-                                      expression: "check"
-                                    }
-                                  ],
-                                  attrs: { type: "checkbox", value: "item.id" },
-                                  domProps: {
-                                    checked: Array.isArray(_vm.check)
-                                      ? _vm._i(_vm.check, "item.id") > -1
-                                      : _vm.check
-                                  },
-                                  on: {
-                                    change: function($event) {
-                                      var $$a = _vm.check,
-                                        $$el = $event.target,
-                                        $$c = $$el.checked ? true : false
-                                      if (Array.isArray($$a)) {
-                                        var $$v = "item.id",
-                                          $$i = _vm._i($$a, $$v)
-                                        if ($$el.checked) {
-                                          $$i < 0 &&
-                                            (_vm.check = $$a.concat([$$v]))
-                                        } else {
-                                          $$i > -1 &&
-                                            (_vm.check = $$a
-                                              .slice(0, $$i)
-                                              .concat($$a.slice($$i + 1)))
-                                        }
-                                      } else {
-                                        _vm.check = $$c
-                                      }
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "check" })
-                              ]
-                            )
-                          ]
-                        )
-                      ]),
+                              "data-testid": _vm.testId + "-checkbox",
+                              dusk: item.id + "--checkbox",
+                              checked: _vm.checked,
+                              name: item.id + "-checkbox"
+                            },
+                            on: { input: _vm.toggleSelection }
+                          })
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(index + 1))]),
                       _vm._v(" "),
@@ -8013,6 +7971,296 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(32)
+/* template */
+var __vue_template__ = __webpack_require__(33)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Checkbox.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-90aed0a4", Component.options)
+  } else {
+    hotAPI.reload("data-v-90aed0a4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        checked: {
+            // type: Boolean,
+            default: false
+        }
+    },
+
+    methods: {
+        toggle: function toggle(event) {
+            this.$emit('input', !this.checked);
+        }
+    }
+});
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "flex items-center" },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "checkbox select-none rounded",
+          attrs: {
+            disabled: _vm.disabled,
+            tabindex: "0",
+            role: "checkbox",
+            "aria-checked": _vm.checked
+          },
+          on: {
+            keydown: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "space", 32, $event.key, [
+                  " ",
+                  "Spacebar"
+                ]) &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              $event.preventDefault()
+              return _vm.toggle($event)
+            },
+            click: _vm.toggle
+          }
+        },
+        [
+          _c("input", {
+            staticClass: "hidden",
+            attrs: { type: "checkbox", disabled: _vm.disabled, name: _vm.name },
+            domProps: { checked: _vm.checked }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "check" }, [
+            _vm.checked
+              ? _c(
+                  "svg",
+                  {
+                    staticClass: "block",
+                    attrs: {
+                      width: "20",
+                      height: "20",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 20 20"
+                    }
+                  },
+                  [
+                    _c(
+                      "g",
+                      {
+                        attrs: {
+                          id: "Page-1",
+                          fill: "none",
+                          "fill-rule": "evenodd"
+                        }
+                      },
+                      [
+                        _c(
+                          "g",
+                          {
+                            attrs: { id: "checkbox-on", "fill-rule": "nonzero" }
+                          },
+                          [
+                            _c(
+                              "g",
+                              {
+                                attrs: { id: "b-link", fill: "var(--primary)" }
+                              },
+                              [
+                                _c("rect", {
+                                  attrs: {
+                                    id: "b",
+                                    width: "20",
+                                    height: "20",
+                                    rx: "4"
+                                  }
+                                })
+                              ]
+                            ),
+                            _c("path", {
+                              attrs: {
+                                id: "Shape",
+                                fill: "#FFF",
+                                d:
+                                  "M7.7 9.3c-.23477048-.3130273-.63054226-.46037132-1.01285927-.37708287-.38231702.08328846-.68093514.38190658-.7642236.7642236C5.83962868 10.0694577 5.9869727 10.4652295 6.3 10.7l2 2c.38884351.3811429 1.01115649.3811429 1.4 0l4-4c.3130273-.23477048.4603713-.63054226.3770829-1.01285927-.0832885-.38231702-.3819066-.68093514-.7642236-.7642236C12.9305423 6.83962868 12.5347705 6.9869727 12.3 7.3L9 10.58l-1.3-1.3v.02z"
+                              }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              : _c(
+                  "svg",
+                  {
+                    staticClass: "block",
+                    attrs: {
+                      width: "20",
+                      height: "20",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 20 20"
+                    }
+                  },
+                  [
+                    _c(
+                      "g",
+                      {
+                        attrs: {
+                          id: "Page-1",
+                          fill: "none",
+                          "fill-rule": "evenodd"
+                        }
+                      },
+                      [
+                        _c("g", { attrs: { id: "checkbox-off" } }, [
+                          _c(
+                            "g",
+                            {
+                              attrs: {
+                                id: "b-link",
+                                fill: "#FFF",
+                                "fill-rule": "nonzero"
+                              }
+                            },
+                            [
+                              _c("rect", {
+                                attrs: {
+                                  id: "b",
+                                  width: "20",
+                                  height: "20",
+                                  rx: "4"
+                                }
+                              })
+                            ]
+                          ),
+                          _c("rect", {
+                            attrs: {
+                              id: "Rectangle-path",
+                              width: "19",
+                              height: "19",
+                              x: ".5",
+                              y: ".5",
+                              stroke: "#CCD4DB",
+                              rx: "4"
+                            }
+                          })
+                        ])
+                      ]
+                    )
+                  ]
+                )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _vm._t("default")
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-90aed0a4", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
