@@ -59,21 +59,24 @@ public static $authorizedToView = false;
                 }),
             PhoneNumber::make('Phone Number','phone')->hideFromIndex()->disableValidation()
             //->format('(###)-###-####')
-            ->countries(['US','IN']),
+            ->countries(['US','IN'])
+            ->rules('required'),
             PhoneNumber::make('Phone','phone')->hideWhenCreating()->hideWhenUpdating()->hideFromDetail()
             ->format('(###)-###-####')
 			->disableValidation()
             //->format('(###)-###-####')
             ->countries(['US','IN']),
             Date::make('Date of Appointment','appointment_date')
-                ->sortable(),
+                ->sortable()
+                ->rules('required'),
             TimeField::make('Time of Appointment','appointment_time')->withTwelveHourTime()
             ->resolveUsing(function ($value) {
                     $re_date = new \Carbon\Carbon($value);
                     $value = $re_date->subHours(0)->Format('H:i A');
                     return $value;
                 })
-                ->sortable(),
+                ->sortable()
+                ->rules('required'),
         ];
     }
 
